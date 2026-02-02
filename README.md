@@ -1,10 +1,10 @@
-# Projet IHM : Trading / Market Simulation avec Ingescape
+# Projet IHM : Trading / Market Simulation avec Ingescape - Groupe C
 
-## Collaborateurs (à modifier)
-- Nom Prénom 1
-- Nom Prénom 2
-- Nom Prénom 3
-- Nom Prénom 4
+## Collaborateurs
+- Youssef EL AALOUCHE
+- Imane EL AYBOUDI
+- Salwa AlIMOUSSA
+
 
 ---
 
