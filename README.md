@@ -83,11 +83,11 @@ pour piloter toute la chaîne de manière propre.
 
 Ajoutez ici une capture du plot Matplotlib généré par MarketSimulator :
 
-![Plot MarketSimulator](imgs/market_plot.png)
+![Plot MarketSimulator](imgs/chart.png)
 
 Et ici une capture du résultat Decision_Result (YOU WON / YOU LOST) :
 
-![Decision Result](imgs/decision_result.png)
+![Decision Result](imgs/agents.png)
 
 ---
 
