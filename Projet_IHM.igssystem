@@ -1,0 +1,1175 @@
+{
+    "extensions": {
+        "eventsTimeline": {
+            "events": [
+            ],
+            "patterns": [
+            ],
+            "timelines": [
+                {
+                    "eventInstances": [
+                    ],
+                    "name": "Timeline_1",
+                    "order": 0,
+                    "patternInstances": [
+                    ]
+                }
+            ]
+        }
+    },
+    "library": {
+        "classes": [
+            {
+                "className": "ScenarioGenerator",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "Trend",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "Asset_Action",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "Generate",
+                            "type": "BOOL"
+                        },
+                        {
+                            "name": "Asset_Category",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "Asset_ID",
+                            "type": "STRING"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Future_Prices",
+                            "type": "DATA"
+                        },
+                        {
+                            "name": "History_Prices",
+                            "type": "DATA"
+                        },
+                        {
+                            "name": "Scenario_Ready",
+                            "type": "BOOL"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "Agents",
+                "plugin": "ingescape_class",
+                "uuid": "7b8c22f6-c886-410f-931c-5e105ad55efb",
+                "version": ""
+            },
+            {
+                "className": "MarketSimulator",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "History_Prices",
+                            "type": "DATA"
+                        },
+                        {
+                            "name": "Future_Prices",
+                            "type": "DATA"
+                        },
+                        {
+                            "name": "Start_Simulation",
+                            "type": "IMPULSION"
+                        },
+                        {
+                            "name": "User_Decision",
+                            "type": "STRING"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Current_Price",
+                            "type": "DOUBLE"
+                        },
+                        {
+                            "name": "Time_Index",
+                            "type": "DOUBLE"
+                        },
+                        {
+                            "name": "Decision_Result",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "Simulation_Done",
+                            "type": "IMPULSION"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "Agents",
+                "plugin": "ingescape_class",
+                "uuid": "9aef8f22-08bc-404b-a86a-7d0f70c31e57",
+                "version": ""
+            },
+            {
+                "className": "AssetManager",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "Action",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "Asset_Category",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "Asset_ID",
+                            "type": "STRING"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Available_Assets",
+                            "type": "DATA"
+                        },
+                        {
+                            "name": "Operation_Status",
+                            "type": "BOOL"
+                        },
+                        {
+                            "name": "Message",
+                            "type": "STRING"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "Agents",
+                "plugin": "ingescape_class",
+                "uuid": "720ff1b0-0536-4e4a-b3a6-1c74c9e6754b",
+                "version": ""
+            },
+            {
+                "className": "PlatformController",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "Available_Assets",
+                            "type": "DATA"
+                        },
+                        {
+                            "name": "Launch",
+                            "type": "IMPULSION"
+                        },
+                        {
+                            "name": "User_Action",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "Asset_ID",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "User_Decision",
+                            "type": "STRING"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Trend",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "Selected_Asset_Cat",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "Selected_Asset_ID",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "User_Decision_Out",
+                            "type": "BOOL"
+                        },
+                        {
+                            "name": "Start_Simulation",
+                            "type": "BOOL"
+                        },
+                        {
+                            "name": "Asset_Action",
+                            "type": "STRING"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "Agents",
+                "plugin": "ingescape_class",
+                "uuid": "0e01e030-2c19-437d-9406-85dd1f456d19",
+                "version": ""
+            },
+            {
+                "className": "UI",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "Available_Assets",
+                            "type": "DATA"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Asset_ID",
+                            "type": "STRING"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "UI",
+                "plugin": "ingescape_class",
+                "uuid": "0b99a9a6-6266-4626-a06c-0dcd116984bb",
+                "version": ""
+            },
+            {
+                "className": "AssetManager_Simple",
+                "color": 0,
+                "definition": {
+                    "outputs": [
+                        {
+                            "name": "Available_Assets",
+                            "type": "DATA"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "Agents",
+                "plugin": "ingescape_class",
+                "uuid": "4e3f9c56-4cd5-4096-bb79-d398314cc634",
+                "version": ""
+            },
+            {
+                "className": "SaveDino",
+                "color": 0,
+                "definition": {
+                    "outputs": [
+                        {
+                            "name": "leftDraw",
+                            "type": "DATA"
+                        },
+                        {
+                            "name": "rightDraw",
+                            "type": "DATA"
+                        },
+                        {
+                            "name": "nextDrawChangeTime",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "lastActionDrawn",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "score",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "services": [
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "BOOL"
+                                }
+                            ],
+                            "name": "elementCreated"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "succeeded",
+                                    "type": "BOOL"
+                                }
+                            ],
+                            "name": "actionResult"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "2868733a-f38d-4b41-8e1e-083457db3c0c",
+                "version": ""
+            },
+            {
+                "className": "DrawRecognizer",
+                "color": 0,
+                "definition": {
+                    "outputs": [
+                        {
+                            "name": "lastAction",
+                            "type": "STRING"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "77564db9-e75d-431f-9c52-4d5af6dcdd10",
+                "version": ""
+            },
+            {
+                "className": "Whiteboard",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "title",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "backgroundColor",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "labelsVisible",
+                            "type": "BOOL"
+                        },
+                        {
+                            "name": "chatMessage",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "clear",
+                            "type": "IMPULSION"
+                        },
+                        {
+                            "name": "ui_command",
+                            "type": "STRING"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "windowWidth",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "windowHeight",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "whiteboardWidth",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "whiteboardHeight",
+                            "type": "INTEGER"
+                        },
+                        {
+                            "name": "lastChatMessage",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "lastAction",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "ui_error",
+                            "type": "STRING"
+                        }
+                    ],
+                    "services": [
+                        {
+                            "arguments": [
+                                {
+                                    "name": "title",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "setTitle"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "color",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "setBackgroundColor"
+                        },
+                        {
+                            "name": "getWindowSize",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "width",
+                                            "type": "INTEGER"
+                                        },
+                                        {
+                                            "name": "height",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "getWindowSizeResult"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "getWhiteboardSize",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "width",
+                                            "type": "INTEGER"
+                                        },
+                                        {
+                                            "name": "height",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "getWhiteboardSizeResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "message",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "chat"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "name",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "message",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "chatAs"
+                        },
+                        {
+                            "name": "snapshot",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "base64Png",
+                                            "type": "DATA"
+                                        }
+                                    ],
+                                    "name": "snapshotResult"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "clear"
+                        },
+                        {
+                            "name": "showLabels"
+                        },
+                        {
+                            "name": "hideLabels"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "type",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "width",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "height",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "fill",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "stroke",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "strokeWidth",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addShape",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "text",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "color",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "addText",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "base64",
+                                    "type": "DATA"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "width",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "height",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addImage",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "url",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addImageFromUrl",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                }
+                            ],
+                            "name": "remove",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "dx",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "dy",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "translate",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "moveTo",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "property",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "setStringProperty",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "property",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "setDoubleProperty",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "getElementIds",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "jsonArray",
+                                            "type": "STRING"
+                                        }
+                                    ],
+                                    "name": "elementIds"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "getElements",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "jsonArray",
+                                            "type": "STRING"
+                                        }
+                                    ],
+                                    "name": "elements"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "f7afbae9-db12-4c32-bd60-6beb15d7c4d3",
+                "version": ""
+            },
+            {
+                "className": "ClockWhiteboard",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "time_iso",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "timestamp",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "time_iso",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "timestamp",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "services": [
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                }
+                            ],
+                            "name": "elementCreated"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "succeeded",
+                                    "type": "BOOL"
+                                }
+                            ],
+                            "name": "actionResult"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "1862f1ec-55de-4524-ad61-a39e957e4b1b",
+                "version": ""
+            }
+        ]
+    },
+    "systemViews": [
+        {
+            "children": [
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "/opt/homebrew/opt/python@3.12/bin/python3.12 main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "172.22.223.164",
+                                "isAttachedToCircle": false,
+                                "mac": "32:98:14:97:28:63",
+                                "uuid": "91a7fec4-1429-40f6-8534-d1a084bf3787"
+                            },
+                            {
+                                "commandLine": "/opt/homebrew/opt/python@3.12/bin/python3.12 main.py --port 5672 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "172.22.223.164",
+                                "isAttachedToCircle": false,
+                                "mac": "32:98:14:97:28:63",
+                                "uuid": "86628e32-3e16-4641-aeb7-6ff090d6a0f8"
+                            },
+                            {
+                                "commandLine": "/opt/homebrew/opt/python@3.12/bin/python3.12 main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "192.168.0.22",
+                                "isAttachedToCircle": false,
+                                "mac": "D2:F0:45:F3:5C:B4",
+                                "uuid": "b664e33c-ec70-4506-bc97-bc6c72f7c56f"
+                            },
+                            {
+                                "commandLine": "/Users/youssef/Documents/Ingescape/sandbox/MarketSimulator/src/venv/bin/python ScenarioGenerator/src/main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "192.168.0.22",
+                                "isAttachedToCircle": false,
+                                "mac": "D2:F0:45:F3:5C:B4",
+                                "uuid": "0632f815-6aa8-445f-8455-13ab4ce03cf3"
+                            },
+                            {
+                                "commandLine": "/Users/youssef/Documents/Ingescape/sandbox-test/MarketSimulator/src/venv/bin/python ScenarioGenerator/src/main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "192.168.0.22",
+                                "isAttachedToCircle": false,
+                                "mac": "D2:F0:45:F3:5C:B4",
+                                "uuid": "d4c89af7-0005-4ab8-afff-90b80fb27518"
+                            },
+                            {
+                                "commandLine": "/Users/youssef/Documents/GitHub/Projet-IHM2/MarketSimulator/src/venv/bin/python ScenarioGenerator/src/main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "192.168.0.22",
+                                "isAttachedToCircle": false,
+                                "mac": "D2:F0:45:F3:5C:B4",
+                                "uuid": "04bf3f6e-510e-4e59-b6c0-ad031f0b3804"
+                            }
+                        ]
+                    },
+                    "class": "7b8c22f6-c886-410f-931c-5e105ad55efb",
+                    "height": 188,
+                    "name": "ScenarioGenerator",
+                    "simulationTime": 5000,
+                    "uuid": "710bdccf-f268-4e70-8d8b-f1a83f0e0d16",
+                    "width": 250,
+                    "x": 584.6760666818012,
+                    "y": 31.640947711695944,
+                    "z": 2.0899999999999994
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "/opt/homebrew/opt/python@3.12/bin/python3.12 main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "172.22.223.164",
+                                "isAttachedToCircle": false,
+                                "mac": "32:98:14:97:28:63",
+                                "uuid": "c6b423ce-5594-4d7b-8d13-15d56c9e7982"
+                            },
+                            {
+                                "commandLine": "/Users/youssef/Documents/Ingescape/sandbox/MarketSimulator/src/venv/bin/python3.12 main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "172.22.223.164",
+                                "isAttachedToCircle": false,
+                                "mac": "32:98:14:97:28:63",
+                                "uuid": "c67f7d45-3fd7-4984-8dd8-d56712f7f25d"
+                            },
+                            {
+                                "commandLine": "/Users/youssef/Documents/Ingescape/sandbox/MarketSimulator/src/venv/bin/python3.12 main.py --port 5672 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "172.22.223.164",
+                                "isAttachedToCircle": false,
+                                "mac": "32:98:14:97:28:63",
+                                "uuid": "ed589c81-6241-40f7-a088-b2b34d7ccfd2"
+                            },
+                            {
+                                "commandLine": "/Users/youssef/Documents/Ingescape/sandbox/MarketSimulator/src/venv/bin/python3.12 main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "192.168.0.22",
+                                "isAttachedToCircle": false,
+                                "mac": "D2:F0:45:F3:5C:B4",
+                                "uuid": "246d3c98-73a1-4f12-b830-5cf3b27dc1da"
+                            },
+                            {
+                                "commandLine": "/Users/youssef/Documents/Ingescape/sandbox/MarketSimulator/src/venv/bin/python MarketSimulator/src/main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "192.168.0.22",
+                                "isAttachedToCircle": false,
+                                "mac": "D2:F0:45:F3:5C:B4",
+                                "uuid": "3bffb756-4ca5-464d-92da-2c4f354e2f1d"
+                            },
+                            {
+                                "commandLine": "/Users/youssef/Documents/Ingescape/sandbox-test/MarketSimulator/src/venv/bin/python MarketSimulator/src/main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "192.168.0.22",
+                                "isAttachedToCircle": false,
+                                "mac": "D2:F0:45:F3:5C:B4",
+                                "uuid": "f13a572e-be0e-43c8-bcd2-1a4d4f614ae4"
+                            },
+                            {
+                                "commandLine": "/Users/youssef/Documents/GitHub/Projet-IHM2/MarketSimulator/src/venv/bin/python MarketSimulator/src/main.py --port 5670 --device en0",
+                                "hostname": "MacBook-Air-de-Youssef.local",
+                                "ip": "192.168.0.22",
+                                "isAttachedToCircle": false,
+                                "mac": "D2:F0:45:F3:5C:B4",
+                                "uuid": "b0667446-2753-4003-a51c-56144c8d1ca5"
+                            }
+                        ]
+                    },
+                    "class": "9aef8f22-08bc-404b-a86a-7d0f70c31e57",
+                    "height": 166,
+                    "name": "MarketSimulator",
+                    "simulationTime": 5000,
+                    "uuid": "1f26427a-4121-4571-a378-26014945914b",
+                    "width": 250,
+                    "x": 1025.8941858420517,
+                    "y": 235.37127544630448,
+                    "z": 1.8100000000000014
+                },
+                {
+                    "data": {
+                        "entries": [
+                            "true"
+                        ],
+                        "value_type": "BOOL"
+                    },
+                    "height": 88,
+                    "isExpanded": true,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "22781d39-e805-4189-b2bd-e3cff8620a74",
+                    "width": 250,
+                    "x": 198.43583273998337,
+                    "y": -8.877184659672324,
+                    "z": 2.1199999999999988
+                },
+                {
+                    "data": {
+                        "data_decoder": "BINARY",
+                        "mostRecentFirst": true,
+                        "msg_type": "",
+                        "proto_file_path": "",
+                        "showTimestamps": true,
+                        "string_decoder": "PLAIN_TEXT"
+                    },
+                    "height": 75,
+                    "isExpanded": true,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.observer",
+                    "uuid": "388675e9-06a4-4bac-aac7-4465d063e669",
+                    "width": 250,
+                    "x": 969.405122127738,
+                    "y": 78.76755655498997,
+                    "z": 1.460000000000001
+                },
+                {
+                    "data": {
+                        "data_decoder": "BINARY",
+                        "mostRecentFirst": true,
+                        "msg_type": "",
+                        "proto_file_path": "",
+                        "showTimestamps": true,
+                        "string_decoder": "PLAIN_TEXT"
+                    },
+                    "height": 75,
+                    "isExpanded": true,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.observer",
+                    "uuid": "338e4f7c-b7cb-43b5-b103-65b16d20a118",
+                    "width": 250,
+                    "x": 974.0236024225005,
+                    "y": -23.841646614605935,
+                    "z": 1.470000000000001
+                },
+                {
+                    "data": {
+                        "entries": [
+                            "SELL"
+                        ],
+                        "value_type": "STRING"
+                    },
+                    "height": 88,
+                    "isExpanded": true,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.writer",
+                    "uuid": "468355d5-331a-402f-9a41-6929de980b9b",
+                    "width": 250,
+                    "x": 530.1945458235391,
+                    "y": 389.5223430053603,
+                    "z": 2.1299999999999986
+                },
+                {
+                    "data": {
+                        "data_decoder": "BINARY",
+                        "mostRecentFirst": true,
+                        "msg_type": "",
+                        "proto_file_path": "",
+                        "showTimestamps": true,
+                        "string_decoder": "PLAIN_TEXT"
+                    },
+                    "height": 75,
+                    "isExpanded": true,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.observer",
+                    "uuid": "28cef9e5-a3f6-4ab4-8618-37219ae4fafb",
+                    "width": 250,
+                    "x": 1359.4284105297752,
+                    "y": 326.4889386197586,
+                    "z": 1.7800000000000014
+                }
+            ],
+            "links": {
+                "mappings": [
+                    {
+                        "from": "MarketSimulator",
+                        "fromInput": "Future_Prices",
+                        "to": "ScenarioGenerator",
+                        "toOutput": "Future_Prices"
+                    },
+                    {
+                        "from": "MarketSimulator",
+                        "fromInput": "History_Prices",
+                        "to": "ScenarioGenerator",
+                        "toOutput": "History_Prices"
+                    },
+                    {
+                        "from": "MarketSimulator",
+                        "fromInput": "Start_Simulation",
+                        "to": "ScenarioGenerator",
+                        "toOutput": "Scenario_Ready"
+                    }
+                ],
+                "others": [
+                    {
+                        "destination": "710bdccf-f268-4e70-8d8b-f1a83f0e0d16",
+                        "destinationIO": {
+                            "name": "Generate",
+                            "type": "INPUT"
+                        },
+                        "source": "22781d39-e805-4189-b2bd-e3cff8620a74",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "388675e9-06a4-4bac-aac7-4465d063e669",
+                        "destinationIO": {
+                            "name": "wildcard",
+                            "type": "INPUT"
+                        },
+                        "source": "710bdccf-f268-4e70-8d8b-f1a83f0e0d16",
+                        "sourceIO": {
+                            "name": "Future_Prices",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "338e4f7c-b7cb-43b5-b103-65b16d20a118",
+                        "destinationIO": {
+                            "name": "wildcard",
+                            "type": "INPUT"
+                        },
+                        "source": "710bdccf-f268-4e70-8d8b-f1a83f0e0d16",
+                        "sourceIO": {
+                            "name": "History_Prices",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "1f26427a-4121-4571-a378-26014945914b",
+                        "destinationIO": {
+                            "name": "User_Decision",
+                            "type": "INPUT"
+                        },
+                        "source": "468355d5-331a-402f-9a41-6929de980b9b",
+                        "sourceIO": {
+                            "name": "value",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "28cef9e5-a3f6-4ab4-8618-37219ae4fafb",
+                        "destinationIO": {
+                            "name": "wildcard",
+                            "type": "INPUT"
+                        },
+                        "source": "1f26427a-4121-4571-a378-26014945914b",
+                        "sourceIO": {
+                            "name": "Decision_Result",
+                            "type": "OUTPUT"
+                        }
+                    }
+                ]
+            },
+            "name": "Main view"
+        }
+    ]
+}
