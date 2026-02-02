@@ -19,6 +19,12 @@ L’idée générale :
 
 ---
 
+## Exécuter le projet (2 commandes)
+
+./setup.sh
+
+./run.sh en0
+
 ## Ce qui marche (version livrée)
 
 ### 1) ScenarioGenerator (génération de scénario)
@@ -103,10 +109,4 @@ Et ici une capture du résultat Decision_Result (YOU WON / YOU LOST) :
 ### Virtual environment (venv)
 Dans notre projet, un **venv est utilisé uniquement dans `MarketSimulator/src/`** (car Matplotlib est nécessaire côté simulateur).
 
-#### Création du venv
-```bash
-cd MarketSimulator/src
-python3.12 -m venv venv
-source venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+
